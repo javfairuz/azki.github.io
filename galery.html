@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<head>
+  <title>gallery</title>
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(1, 7, 44);
+  text-align: center;
+
+  height: 1000px;
+}
+
+.container {
+  border: 5px solid white;
+  margin: 30px auto;
+  width: 600px;
+  line-height: 0;
+}
+.thumbnail {
+  display: flex;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.thumb {
+  box-sizing: border-box;
+  width: 200px;
+  border: 2px solid white;
+}
+
+.main {
+  cursor: pointer;
+  border: 2px solid white;
+  box-sizing: border-box;
+}
+
+.thumb:hover {
+  opacity: 0.3;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+.fade {
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+.active {
+  cursor: pointer;
+  opacity: 0.3;
+}
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 999;
+  /* transition: 0.8s; */
+  text-align: center;
+  padding: 100px 0;
+  top: 0;
+  overflow: hidden;
+}
+
+.overlay img {
+  width: 800px;
+  max-height: 100%;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.overlay .close {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  margin-left: -20px;
+  text-decoration: none;
+  background-color: black;
+  border: 2px solid rgba(255, 255, 255, 0.555);
+  color: white;
+  text-transform: uppercase;
+  padding: 6px;
+  font-size: 15px;
+  line-height: 10px;
+}
+
+  </style>
+</head>
+
+<body>
+  <!-- <div class="overlay">
+    <img src="img/1.jpg" />
+  </div> -->
+  <div class="container">
+    <img src="item/1.jpg" alt="gambar 1" class="main" />
+
+    <div class="thumbnail">
+      <img src="item/1.jpg" class="thumb" />
+      <img src="item/2.jpg" class="thumb" />
+      <img src="item/13.jpg" class="thumb" />
+      <img src="item/4.jpg" class="thumb" />
+      <img src="item/11.jpg" class="thumb" />
+      <img src="item/8.jpg" class="thumb" />
+    </div>
+  </div>
+  <script>
+    alert('my fav picture')
+    alert('sebenernya masih banyak , cuma deadlinenya mepet , sorry ya')
+        const main = document.querySelector(".main");
+const thumbs = document.querySelectorAll(".thumb");
+const container = document.querySelector(".container");
+container.addEventListener("click", function (e) {
+  if (e.target.className == "thumb") {
+    main.src = e.target.src;
+    main.classList.add("fade");
+
+    setTimeout(function () {
+      main.classList.remove("fade");
+    }, 500);
+
+    thumbs.forEach(function (thumb) {
+      if (thumb.classList.contains("active")) {
+        thumb.classList.remove("active");
+      }
+
+      //   thumb.className = "thumb";
+    });
+    e.target.classList.add("active");
+  }
+});
+
+// const overlay = document.querySelector(".overlay");
+main.addEventListener("click", function () {
+  const divBaru = document.createElement("div");
+  divBaru.setAttribute("class", "overlay");
+  const close = document.createElement("a");
+  close.setAttribute("href", "#");
+  close.setAttribute("class", "close");
+  const textClose = document.createTextNode("x close");
+  close.appendChild(textClose);
+  const img = document.createElement("img");
+  img.setAttribute("src", "img/");
+  const body = document.body;
+  divBaru.appendChild(close);
+  divBaru.appendChild(img);
+  body.appendChild(divBaru);
+  img.src = main.src;
+
+  close.addEventListener("click", function () {
+    body.removeChild(divBaru);
+  });
+});
+
+  </script>
+</body>

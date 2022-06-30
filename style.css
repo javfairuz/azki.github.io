@@ -1,0 +1,189 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center; 
+    background-color: rgba(29, 43, 58, 1);
+    /* animation-name: fadeIn;
+    animation-duration: 10s; */
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    width: 800px;
+    height: 300px;
+}
+
+.container  {
+    text-align: center;
+}
+.container .count,.text{
+    font-family: 'sunflower',pacifico;
+    /* height :100%;
+    width: 50%; */
+    font-size: 100px;
+    font-weight: bold;
+    text-align: center;
+    /* background-color: #00DFC4; */
+    color: #00DFC4;
+  
+
+}
+
+.container2{
+    text-align: center;
+    margin-top: -20px;
+}
+
+.container2 span{
+    font-family: 'sunflower',pacifico;
+    /* height :100%;
+    width: 50%; */
+    font-size: 100px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    /* background-color: #00DFC4; */
+    color: #00DFC4;
+    /* margin-top: 0 10px; */
+}
+.text-center{
+    color: white;
+    display: none;
+    font-family: 'Adlinnaka',sans-serif;
+}
+.btn-dark{
+    width: 100%;
+    background-color: #00DFC4;
+    color:  rgba(29, 43, 58, 1);
+    font-weight: bold;
+    font-size: large;
+}
+.btn-dark:hover{
+    background-color:rgba(29, 43, 58, 1); 
+    color: #00DFC4; 
+}
+
+.lanjut {
+    display: none;
+}
+
+.gallery{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+.thanks {
+    font-family: 'sunflower',pacifico;
+    font-size: 80px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    color: #00DFC4;
+    
+}
+.thanks:hover{
+    cursor: pointer;
+}
+.love {
+    font-family: 'sunflower',pacifico;
+    font-size: 80px;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+    color: #00DFC4;
+}
+
+.song{
+    font-size: 40px;
+    font-family: 'Adlinnaka',sans-serif;
+    font-weight: bold;
+    color: #00DFC4;
+
+}
+.play:hover{
+    cursor: pointer;
+}
+
+.stikel{
+    width: 100px;
+}
+
+.play{
+    width: 100px;
+    margin-bottom: 10px;
+    animation: muncul 6s;
+    opacity: 1;
+}
+.gif{
+    margin-top: -150px;
+
+}
+.uwu{
+    width: 150px;
+}
+.lagu{
+    display: none;
+}
+
+.gallery {
+    margin-top: 10px;
+}
+@keyframes muncul {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@media only screen and (max-width: 600px){
+
+    .letter{
+        color: white;
+        /* display: none; */
+        font-size: 12px;
+        font-family: 'Adlinnaka',sans-serif;
+    } 
+    .owo{
+        display: flex;
+        justify-content: space-around;
+
+    }
+    .satu,.empat{
+        width: 50px;
+        display: none;
+    }
+    .stikel{
+        width: 50px;
+    }
+    .utama{
+        width: 100px;
+    }
+    .container2 span{
+        font-size: 55px;
+    }
+    /* .btn-dark{
+        width: 100%;
+    } */
+    .thanks{
+        font-size: 40px;
+    }.song{
+        font-size: 20px;
+    }
+    .play {
+        width: 80px;
+    }
+}
+
+ 
+
+
